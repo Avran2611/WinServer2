@@ -126,4 +126,12 @@ We zullen nu de stappen doorlopen om Windows Server 2019 te installeren.
 4. Klik vervolgens op `new` en `Apply` om een nieuwe partitie aan te maken op de (virtuele) harde schijf ![sc](img/WinServ19/05.jpg) Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die gereserveerd is voor het systeem. Klik hier op `oke`.
 5. Selecteer de Primary partitie en klik op `Next` ![sc](img/WinServ19/06.jpg)
 
-De setup begint nu met het installeren van Windows Server 2019
+De setup begint nu met het installeren van Windows Server 2019. De machine zal een aantal keer automatisch opnieuw opstarten.
+
+Op het volgende scherm wordt gevraagd om een wachtwoord in te geven. Ik kies hier voor `DC-root`. Klik vervolgens op `Finish` ![sc](img/WinServ19/07.jpg)
+
+Om windows te ongrendelen klikt u bovenaan op `Invoer` > `Toetsenbord` > `Invoeren Ctrl+Alt+Del` ![sc](img/WinServ19/08.jpg)
+
+Log vervolgens in met uw gekozen wachtwoord. Server Manager zal automatisch openen.
+
+Windows Server 2019 is nu geïnstalleerd op EP1-DC-ALFA. Herhaal deze stappen nu voor EP1-WEB, EP1-SCCM en EP1-CA.
