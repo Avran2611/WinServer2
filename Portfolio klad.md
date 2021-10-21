@@ -147,12 +147,18 @@ Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die g
 
 De setup begint nu met het installeren van Windows Server 2019. De machine zal een aantal keer automatisch opnieuw opstarten.
 
-Op het volgende scherm wordt gevraagd om een wachtwoord in te geven. Ik kies hier voor `DC-root`. Klik vervolgens op `Finish` ![sc](img/WinServ19/07.jpg)
+Op het volgende scherm wordt gevraagd om een wachtwoord in te geven. Ik kies hier voor `DC-root`. Klik vervolgens op `Finish`
 
-Om windows te ongrendelen klikt u bovenaan op `Invoer` > `Toetsenbord` > `Invoeren Ctrl+Alt+Del` ![sc](img/WinServ19/08.jpg)
+![sc](img/WinServ19/07.jpg)
+
+Om windows te ongrendelen klikt u bovenaan op `Invoer` > `Toetsenbord` > `Invoeren Ctrl+Alt+Del`
+
+![sc](img/WinServ19/08.jpg)
 
 Log vervolgens in met uw gekozen wachtwoord. Server Manager zal automatisch openen.
 
-Nu kunnen we ook de ISO uit het optische station verwijderen door rechts te klikken op `Optisch station` en dan te klikken op `Schijf van virtueel station verwijderen` ![sc](img/WinServ19/09.jpg)
+Nu kunnen we ook de ISO uit het optische station verwijderen door rechts te klikken op `Optisch station` en dan te klikken op `Schijf van virtueel station verwijderen`
+
+![sc](img/WinServ19/09.jpg)
 
 Windows Server 2019 is nu geïnstalleerd op EP1-DC-ALFA. Herhaal deze stappen nu voor EP1-WEB, EP1-SCCM en EP1-CA.
