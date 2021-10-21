@@ -143,6 +143,7 @@ Accepteer de overeenkomst
 Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die gereserveerd is voor het systeem. Klik hier op `oke`
 
 5. Selecteer de Primary partitie en klik op `Next`
+
    ![sc](img/WinServ19/06.jpg)
 
 De setup begint nu met het installeren van Windows Server 2019. De machine zal een aantal keer automatisch opnieuw opstarten.
