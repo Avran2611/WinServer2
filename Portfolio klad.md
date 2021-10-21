@@ -134,4 +134,6 @@ Om windows te ongrendelen klikt u bovenaan op `Invoer` > `Toetsenbord` > `Invoer
 
 Log vervolgens in met uw gekozen wachtwoord. Server Manager zal automatisch openen.
 
+Nu kunnen we ook de ISO uit het optische station verwijderen door rechts te klikken op `Optisch station` en dan te klikken op `Schijf van virtueel station verwijderen` ![sc](img/WinServ19/09.jpg)
+
 Windows Server 2019 is nu geïnstalleerd op EP1-DC-ALFA. Herhaal deze stappen nu voor EP1-WEB, EP1-SCCM en EP1-CA.
