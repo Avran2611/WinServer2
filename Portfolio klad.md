@@ -120,11 +120,30 @@ Selecteer EP1-DC-ALFA uit de lijst en klik bovenaan op starten.
 
 We zullen nu de stappen doorlopen om Windows Server 2019 te installeren.
 
-1. Kies de gewenste taal, tijdformaat en type toetsenbord ![sc](img/WinServ19/02.jpg) Klik vervolgens op `Next` en op `Install Now`
-2. Kies voor Standard Evaluation (Desktop Experience) en klik op `Next` ![sc](img/WinServ19/03.jpg) Accepteer de overeenkomst
-3. Kies voor `Custom: Install Windows only (advanced)` als installatietype ![sc](img/WinServ19/04.jpg)
-4. Klik vervolgens op `new` en `Apply` om een nieuwe partitie aan te maken op de (virtuele) harde schijf ![sc](img/WinServ19/05.jpg) Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die gereserveerd is voor het systeem. Klik hier op `oke`.
-5. Selecteer de Primary partitie en klik op `Next` ![sc](img/WinServ19/06.jpg)
+1. Kies de gewenste taal, tijdformaat en type toetsenbord
+
+    ![sc](img/WinServ19/02.jpg)
+
+Klik vervolgens op `Next` en op `Install Now`
+
+2. Kies voor Standard Evaluation (Desktop Experience) en klik op `Next`
+
+   ![sc](img/WinServ19/03.jpg)
+
+Accepteer de overeenkomst
+
+3. Kies voor `Custom: Install Windows only (advanced)` als installatietype
+
+    ![sc](img/WinServ19/04.jpg)
+
+4. Klik vervolgens op `new` en `Apply` om een nieuwe partitie aan te maken op de (virtuele) harde schijf
+
+   ![sc](img/WinServ19/05.jpg)
+
+Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die gereserveerd is voor het systeem. Klik hier op `oke`
+
+5. Selecteer de Primary partitie en klik op `Next`
+   ![sc](img/WinServ19/06.jpg)
 
 De setup begint nu met het installeren van Windows Server 2019. De machine zal een aantal keer automatisch opnieuw opstarten.
 
