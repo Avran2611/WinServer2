@@ -1,5 +1,7 @@
 # Windows Server II Portfolio EP1 (Klad)
 
+
+
 ![sc](img/01.jpg)
 
 ## Handleiding
@@ -19,6 +21,8 @@ Vooraleer we van start kunnen gaan met het creëren van de opzet van deze opdrac
 ![sc](img/vbox/02.jpg)
 
 4. Open het `exe` bestand en doorloop de isntallatie
+
+---
 
 ### 2. VM's aanmaken
 
@@ -42,25 +46,25 @@ De eerste VM die we zullen configureren is die van de domeincontroller. Open Vir
 
 ![sc](img/VMs/01.jpg)
 
-Geef de nieuwe VM de naam `EP1-DC-ALFA` en selecteer Windows 2019 als versie. Klik vervolgens op volgende
+Geef de nieuwe VM de naam `EP1-DC-ALFA` en selecteer Windows 2019 als versie. Klik vervolgens op `volgende`
 
 ![sc](img/VMs/02.jpg)
 
-Kies nu hoeveel RAM u wilt toekennen aan de VM. In ons geval gebruiken we de default van 2048 MB. Klik op volgende.
+Kies nu hoeveel RAM u wilt toekennen aan de VM. In ons geval gebruiken we de default van 2048 MB. Klik op `volgende`
 
 ![sc](img/VMs/03.jpg)
 
-Selecteer nieuwe harde schijf aanmaken en klik op volgende.
+Selecteer nieuwe harde schijf aanmaken en klik op `volgende`
 
-Kies dan voor VDI (Virtual Disk Image) en klik op volgende.
+Kies dan voor VDI (Virtual Disk Image) en klik op `volgende`
 
-Kies voor dynamisch gealloceerd en klik op volgende.
+Kies voor dynamisch gealloceerd en klik op `volgende`
 
-Kies een locatie en ken een grootte toe. 50 GB zou voldoende moeten zijn. Klik vervolgens op aanmaken.
+Kies een locatie en ken een grootte toe. 50 GB zou voldoende moeten zijn. Klik vervolgens op `aanmaken`
 
 ![sc](img/VMs/07.jpg)
 
-Nu gaan we de netwerkkaarten van de VM configureren. Selecteer de nieuwe VM links en klik vervolgens op instellingen.
+Nu gaan we de netwerkkaarten van de VM configureren. Selecteer de nieuwe VM links en klik vervolgens op `instellingen`
 
 ![sc](img/VMs/08.jpg)
 
@@ -76,4 +80,50 @@ Ten slotte gaan we de Windows Server ISO klaarzetten voor installatie op onze ni
 
 ![sc](img/VMs/11.jpg)
 
-We zijn klaar met onze eerste VM voor te bereiden. We doen de resterende VM's analoog met volgende instellingen per VM. De instellingen die niet gespecifieerd worden blijven hetzelfde als de domeincontroller VM.
+We zijn klaar met onze eerste VM voor te bereiden. We doen de resterende VM's analoog met onderstaande instellingen per VM. De instellingen die niet gespecifieerd worden blijven hetzelfde als de domeincontroller VM. Exacte configuratie van de IP adressen doen we later.
+
+#### VM Web Server
+
+- **Besturingssysteem:** Windows Server 2019
+- **Naam:** Exchange Server EP1-WEB
+- **NIC Configuratie:** 1 adapter op intern netwerk LAN10
+
+#### VM Deployment Server
+
+- **Besturingssysteem:** Windows Server 2019
+- **Naam:** EP1-SCCM
+- **NIC Configuratie:** 1 adapter op intern netwerk LAN10
+
+#### VM Certificate Server
+
+- **Besturingssysteem:** Windows Server 2019
+- **Naam:** EP1-CA
+- **NIC Configuratie:** 1 adapter op intern netwerk LAN10
+
+#### VM's  Client 1
+
+- **Besturingssysteem:** Windows 10
+- **Naam:** EP1-CLT1
+- **NIC Configuratie:** 1 adapter op intern netwerk LAN10
+
+Je beginscherm zou er nu als volgt moeten uitzien:
+
+![sc](img/VMs/12.jpg)
+
+### 3. Installatie Windows Server 2019
+
+De installatie van Windows Server verloopt analoog op elke machine.
+
+Selecteer EP1-DC-ALFA uit de lijst en klik bovenaan op starten.
+
+![sc](img/WinServ19/01.jpg)
+
+We zullen nu de stappen doorlopen om Windows Server 2019 te installeren.
+
+1. Kies de gewenste taal, tijdformaat en type toetsenbord ![sc](img/WinServ19/02.jpg) Klik vervolgens op `Next` en op `Install Now`
+2. Kies voor Standard Evaluation (Desktop Experience) en klik op `Next` ![sc](img/WinServ19/03.jpg) Accepteer de overeenkomst
+3. Kies voor `Custom: Install Windows only (advanced)` als installatietype ![sc](img/WinServ19/04.jpg)
+4. Klik vervolgens op `new` en `Apply` om een nieuwe partitie aan te maken op de (virtuele) harde schijf ![sc](img/WinServ19/05.jpg) Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die gereserveerd is voor het systeem. Klik hier op `oke`.
+5. Selecteer de Primary partitie en klik op `Next` ![sc](img/WinServ19/06.jpg)
+
+De setup begint nu met het installeren van Windows Server 2019
