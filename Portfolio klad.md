@@ -4,7 +4,7 @@
 
 ![sc](img/01.jpg)
 
-## Handleiding
+## Voorbereiding
 
 ### **1. Installatie Virtual Box**
 
@@ -184,7 +184,7 @@ Check of het ISO bestand van Windows 10 in het optische station geplaatst is en 
 4. Vervolgens vraagt Windows nogmaals om uw taal en toetsenbord in te stellen
 5. Kies voor `Set up for personal use` en klik op `Next`
 
-   ![sc](img/Win10/03.jpg)
+   ![sc](img/Win10/04.jpg)
 
 6. Klik linksonder op `Offline account` en geef een gebruikernaam en wachtwoord in. Wij gebruiken hier CLTuser1 als gebruikernaam en CLT-root als paswoord.
 
@@ -193,3 +193,53 @@ Check of het ISO bestand van Windows 10 in het optische station geplaatst is en 
 7. Ten slotte vraagt windows of een aantal services moeten worden ingeschakeld. Dit zijn services zoals locatie, diagnostic reports enzovoort. Antwoord op alles neen.
 
 Windows 10 is nu succescol geïnsalleerd op EP1-CLT1
+
+## Configuratie van de servers
+
+### Configuratie **EP1-DC-ALFA**
+
+#### **IP Configuratie**
+
+Eerst en vooral gaan we EP1-DC-ALFA voorzien van de juiste netwerkinstellingen. Log in op EP1-DC-ALFA. Server Manager zou automatisch moeten opstarten. Op het dashboard klik je op `Configure this local server`
+
+![sc](img/DC/01.jpg)
+
+Eerst veranderen we de hostnaam. Klik op de naam om deze te veranderen:
+
+![sc](img/DC/02.jpg)
+
+Klik vervolgens op `Change` en geef een de nieuwe hostnaam in. We gebruiken `EP1-DC-ALFA`
+
+![sc](img/DC/03.jpg)
+![sc](img/DC/04.jpg)
+
+Klik op `OK` en herstart de machine
+
+Een server heeft ook een statisch ip adres nodig om te functioneren. Deze gaan we nu configureren
+
+Om een onderscheid te kunnen maken tussen de twee netwerkadapters die we eerder configureerden op deze machine, gaan we één van de kabels uittrekken en de adapters juist hernoemen in windows. In de VirtualBox instellingen van EP1-DC-ALFA gaat u naar `Netwerk` en kiest u één van de adapters. Klik dan op `Geavanceerd` en deselecteer `Kabel aangesloten`. Klik vervolgens op `OK`. Merk op dat we hier de kabel van het WAN adapter ontkoppelden
+
+![sc](img/DC/05.jpg)
+
+Nu kunnen we in windows de adapters juist hernoemen. Navigeer naar `Control Panel` > `Network and Internet` > `Network and Sharing Center` > `Change adapter settings` en hernoem de adapters
+
+![sc](img/DC/06.jpg)
+
+Nu kunnen we de kabel weer aankoppelen in VirtualBox
+
+Binnen onze omgeving heeft EP1-DC-ALFA een statisch ip adres op het LAN10 netwerk. Rechtsklik op het LAN10 adapter en klik op `Properties`.
+
+![sc](img/DC/08.jpg)
+
+Selecteer `Internet Protocol Version 4 (TCP/IPv4)` en klik op `Properties`
+
+![sc](img/DC/09.jpg)
+
+Selecteer `Use the following IP address` en geef volgende adressen in:
+
+![sc](img/DC/10.jpg)
+
+#### **Rollen installeren**
+
+We gaan op EP1-DC-ALFA de Active Directory Domain Services (AD DS) installeren en vervolgens de server promoveren tot Active Directory Domain Controller (AD DC).
+
