@@ -243,3 +243,16 @@ Selecteer `Use the following IP address` en geef volgende adressen in:
 
 We gaan op EP1-DC-ALFA de Active Directory Domain Services (AD DS) installeren en vervolgens de server promoveren tot Active Directory Domain Controller (AD DC).
 
+Op het dashboard in Server Manager klikt u op `Add roles and features`
+
+![sc](img/DC/11.jpg)
+
+Selecteer `Role-based or feature-based installation` en klik op `Next`
+
+Selecteer op het volgende scherm `Select a server from the server pool` en selecteer EP1-DC-ALFA. Klik op `Next`
+
+![sc](img/DC/12.jpg)
+
+Selecteer `Active Directory Domain Services` uit de lijst en klik op `Add Features`. Klik vervolgens op `Next` tot het confirmation scherm. Vink hier aan dat de server automatisch mag herstarten tijdens de installatie en klik op `Install`
+
+![sc](img/DC/13.jpg)
