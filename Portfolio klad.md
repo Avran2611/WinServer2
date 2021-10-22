@@ -6,7 +6,7 @@
 
 ## Handleiding
 
-### 1. Installatie Virtual Box
+### **1. Installatie Virtual Box**
 
 Vooraleer we van start kunnen gaan met het creëren van de opzet van deze opdracht moeten we Virtual Box installeren. We zullen Virtual Box gebruiken om onze omgeving en servers te virtualiseren op 1 host systeem.
 
@@ -24,7 +24,7 @@ Vooraleer we van start kunnen gaan met het creëren van de opzet van deze opdrac
 
 ---
 
-### 2. VM's aanmaken
+### **2. VM's aanmaken**
 
 Nu kunnen we beginnen met het aanmaken van de verschillende VM's die we nodig hebben om bovenstaande opstelling te bereiken.
 Een klein overzicht van wat we nodig hebben:
@@ -40,7 +40,7 @@ Hiervoor zullen enkele ISO's voor nodig zijn. Download ze hier:
 - Windows Server 2019: <https://software-download.microsoft.com/download/sg/17763.379.190312-0539.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso>
 - Windows 10: <https://www.microsoft.com/nl-nl/software-download/windows10>
 
-#### VM Domeincontroller
+#### **VM Domeincontroller**
 
 De eerste VM die we zullen configureren is die van de domeincontroller. Open VirtualBox en klik bovenaan op `nieuw`.
 
@@ -82,25 +82,25 @@ Ten slotte gaan we de Windows Server ISO klaarzetten voor installatie op onze ni
 
 We zijn klaar met onze eerste VM voor te bereiden. We doen de resterende VM's analoog met onderstaande instellingen per VM. De instellingen die niet gespecifieerd worden blijven hetzelfde als de domeincontroller VM. Exacte configuratie van de IP adressen doen we later.
 
-#### VM Web Server
+#### **VM Web Server**
 
 - **Besturingssysteem:** Windows Server 2019
 - **Naam:** Exchange Server EP1-WEB
 - **NIC Configuratie:** 1 adapter op intern netwerk LAN10
 
-#### VM Deployment Server
+#### **VM Deployment Server**
 
 - **Besturingssysteem:** Windows Server 2019
 - **Naam:** EP1-SCCM
 - **NIC Configuratie:** 1 adapter op intern netwerk LAN10
 
-#### VM Certificate Server
+#### **VM Certificate Server**
 
 - **Besturingssysteem:** Windows Server 2019
 - **Naam:** EP1-CA
 - **NIC Configuratie:** 1 adapter op intern netwerk LAN10
 
-#### VM's  Client 1
+#### **VM's  Client 1**
 
 - **Besturingssysteem:** Windows 10
 - **Naam:** EP1-CLT1
@@ -110,7 +110,7 @@ Je beginscherm zou er nu als volgt moeten uitzien:
 
 ![sc](img/VMs/12.jpg)
 
-### 3. Installatie Windows Server 2019
+### **3. Installatie Windows Server 2019**
 
 De installatie van Windows Server verloopt analoog op elke machine.
 
@@ -148,18 +148,48 @@ Windows kan een opmerking geven dat er een extra partitie wordt aangemaakt die g
 
 De setup begint nu met het installeren van Windows Server 2019. De machine zal een aantal keer automatisch opnieuw opstarten.
 
-Op het volgende scherm wordt gevraagd om een wachtwoord in te geven. Ik kies hier voor `DC-root`. Klik vervolgens op `Finish`
+7. Op het volgende scherm wordt gevraagd om een wachtwoord in te geven. Ik kies hier voor `DC-root`. Klik vervolgens op `Finish`
 
-![sc](img/WinServ19/07.jpg)
+   ![sc](img/WinServ19/07.jpg)
 
-Om windows te ongrendelen klikt u bovenaan op `Invoer` > `Toetsenbord` > `Invoeren Ctrl+Alt+Del`
+8. Om windows te ongrendelen klikt u bovenaan op `Invoer` > `Toetsenbord` > `Invoeren Ctrl+Alt+Del`
 
-![sc](img/WinServ19/08.jpg)
+   ![sc](img/WinServ19/08.jpg)
 
 Log vervolgens in met uw gekozen wachtwoord. Server Manager zal automatisch openen.
 
-Nu kunnen we ook de ISO uit het optische station verwijderen door rechts te klikken op `Optisch station` en dan te klikken op `Schijf van virtueel station verwijderen`
+9. Nu kunnen we ook de ISO uit het optische station verwijderen door rechts te klikken op `Optisch station` en dan te klikken op `Schijf van virtueel station verwijderen`
 
-![sc](img/WinServ19/09.jpg)
+   ![sc](img/WinServ19/09.jpg)
 
 Windows Server 2019 is nu geïnstalleerd op EP1-DC-ALFA. Herhaal deze stappen nu voor EP1-WEB, EP1-SCCM en EP1-CA.
+
+### **4. Installatie Windows 10**
+
+De installatie van Windows 10 gebeurd redelijk analoog met die van Windows Server. We installeren Windows 10 voorlopig enkel op `EP1-CLT1`.
+
+Check of het ISO bestand van Windows 10 in het optische station geplaatst is en start de machine.
+
+1. Kies de gewenste taal, tijdformaat en type toetsenbord. (Analoog aan windows server)
+2. Windows vraagt om een licentiesleutel in te geven. Klik hier op `I don't have a product key`
+
+   ![sc](img/Win10/01.jpg)
+
+3. Kies voor Windows 10 Pro en klik op `Next`
+
+   ![sc](img/Win10/02.jpg)
+
+   Windows begint nu met de installatie
+
+4. Vervolgens vraagt Windows nogmaals om uw taal en toetsenbord in te stellen
+5. Kies voor `Set up for personal use` en klik op `Next`
+
+   ![sc](img/Win10/03.jpg)
+
+6. Klik linksonder op `Offline account` en geef een gebruikernaam en wachtwoord in. Wij gebruiken hier CLTuser1 als gebruikernaam en CLT-root als paswoord.
+
+   ![sc](img/Win10/05.jpg)
+
+7. Ten slotte vraagt windows of een aantal services moeten worden ingeschakeld. Dit zijn services zoals locatie, diagnostic reports enzovoort. Antwoord op alles neen.
+
+Windows 10 is nu succescol geïnsalleerd op EP1-CLT1
